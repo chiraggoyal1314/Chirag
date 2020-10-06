@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+	Register
+{% endblock %}
+
+{% block main %}
+
+	<script type="text/javascript">
+
+		function showPassword(){
+			var x = document.querySelector("#password");
+			if(x.type == "password")
+				x.type = "text";
+			else
+				x.type = "password";
+
+			var y = document.querySelector("#confirm");
+			if(y.type == "password")
+				y.type = "text";
+			else
+				y.type = "password";
+		}
+	</script>
+
+	<form action="/register" method="POST">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text" required>
+        </div>
+        <div class="form-group">
+            <input id="password" class="form-control" name="password" placeholder="Password" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+        </div>
+
+        <div class="form-group">
+            <input id="confirm" class="form-control" name="confirm" placeholder="Confirm Password" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+        </div>
+
+        <div class = "form-group">
+        	<p class = "form-control show" style="font-size: 1rem;color:rgba(0,0,0,0.5);padding-right: 64px;padding-left: 20px;"><input type = "checkbox" onclick="showPassword()"> Show Password </p>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Join Us</button>
+    </form>
+{% endblock %}
