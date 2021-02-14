@@ -1,3 +1,3 @@
 Chirag Goyal
 Deepanshu Kaushik
-Parnav Garg
+Prnav Garg
